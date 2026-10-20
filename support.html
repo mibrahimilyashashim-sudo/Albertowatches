@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Watch Store - FAQs</title>
+
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="support.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+
+    <!-- Accordion Script -->
+    <script>
+        $(function () {
+            $("#accordion").accordion({
+                collapsible: true,
+                active: 0,
+                heightStyle: "content",
+                animate: 250
+            });
+        });
+    </script>
+
+    <style>
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-card {
+            background: #ffffff;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .modal-card h2 {
+            margin-bottom: 5px;
+            font-family: 'Cinzel', serif;
+            color: #111;
+        }
+
+        .modal-card p {
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: #111;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: #333;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 4px;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR (Aap ke purane code ke mutabiq) -->
+    <nav class="navbar">
+
+        <a href="./index.html" class="logo">
+            ALBERTO <span>WATCHES</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./products.html">Collections</a></li>
+            <li><a href="./technology.html">Technology</a></li>
+            <li><a href="./support.html" class="active">About us</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="./products.html" class="btn-buy">Explore Watches</a>
+
+            <button class="mobile-toggle"
+                id="mobileToggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navLinks">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+        </div>
+
+    </nav>
+
+    <!-- GOOGLE MAP SECTION -->
+    <section class="location-section">
+
+        <div class="location-heading">
+            <span>OUR LOCATION</span>
+
+            <div class="gold-line"></div>
+
+            <h2>Find Us in Karachi</h2>
+
+            <p>
+                Explore our location on the map below.
+            </p>
+        </div>
+
+        <div class="map-container">
+            <iframe
+                src="https://maps.google.com/maps?q=Karachi%2C%20Pakistan&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="350"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Map showing Karachi, Pakistan">
+            </iframe>
+        </div>
+
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+
+        <div class="faq-heading">
+            <span>Customer Support</span>
+
+            <div class="gold-line"></div>
+
+            <h1>Frequently Asked Questions</h1>
+
+            <p>
+                Everything you need to know about our Vintage, Luxury,
+                and Smart Watches.
+            </p>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div id="accordion">
+
+            <!-- FAQ 1 -->
+            <h3>What types of watches do you sell?</h3>
+
+            <div>
+                <p>
+                    Our store specializes in three categories of watches:
+                    Vintage Watches, Luxury Watches, and Smart Watches.
+                    Each collection is carefully selected for customers
+                    who value style, quality, and uniqueness.
+                </p>
+            </div>
+
+            <!-- FAQ 2 -->
+            <h3>What makes your vintage watches special?</h3>
+
+            <div>
+                <p>
+                    Our vintage watches feature classic designs inspired
+                    by different eras. They are perfect for customers who
+                    appreciate timeless style, traditional craftsmanship,
+                    and the charm of vintage fashion.
+                </p>
+            </div>
+
+            <!-- FAQ 3 -->
+            <h3>Are your luxury watches authentic?</h3>
+
+            <div>
+                <p>
+                    Yes, we focus on offering high-quality and authentic
+                    luxury watches. Product details and specifications are
+                    provided with each watch so customers can make a
+                    confident purchase.
+                </p>
+            </div>
+
+            <!-- FAQ 4 -->
+            <h3>What features do your smart watches offer?</h3>
+
+            <div>
+                <p>
+                    Smart watches offer useful features such as fitness
+                    tracking, step counting, heart-rate monitoring,
+                    smartphone notifications, and activity tracking.
+                    Depending on the model, some watches may also include
+                    sleep tracking, alarms, and customizable watch faces.
+                    These features combine everyday convenience with
+                    modern style.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT INFORMATION SECTION -->
+    <section class="contact-section">
+
+        <div class="contact-heading">
+            <span>GET IN TOUCH</span>
+
+            <div class="gold-line"></div>
+
+            <h2>Contact Information</h2>
+
+            <p>
+                Have questions about our watches? Get in touch.
+            </p>
+        </div>
+
+        <div class="contact-container">
+
+            <!-- EMAIL -->
+            <div class="contact-card">
+                <div class="contact-icon">&#9993;</div>
+
+                <h3>Email Us</h3>
+
+                <p>
+                    Send us your questions or enquiries.
+                </p>
+
+                <a href="mailto:albertowatches@example.com">
+                    albertowatches@example.com
+                </a>
+            </div>
+
+            <!-- LOCATION -->
+            <div class="contact-card">
+                <div class="contact-icon">&#9906;</div>
+
+                <h3>Our Location</h3>
+
+                <p>
+                    Karachi, Sindh, Pakistan
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Karachi%2C%20Pakistan"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View on Google Maps &rarr;
+                </a>
+            </div>
+
+            <!-- ENQUIRIES -->
+            <div class="contact-card">
+                <div class="contact-icon">&#9742;</div>
+
+                <h3>General Enquiries</h3>
+
+                <p>
+                    Have a question about our watch collections?
+                </p>
+
+                <a href="#" id="openModalBtn">
+                    Send an enquiry &rarr;
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ENQUIRY MODAL FORM -->
+    <div class="modal-overlay" id="enquiryModal">
+        <div class="modal-card">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <h2>General Enquiry</h2>
+            <p>Please fill out the form below and we will get back to you shortly.</p>
+
+            <div class="success-message" id="successMsg">
+                Form submitted successfully!
+            </div>
+
+            <form id="enquiryForm" novalidate>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="John Doe">
+                    <div class="error-message" id="nameError">Name must contain letters only.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="example@domain.com">
+                    <div class="error-message" id="emailError">Please enter a valid email address.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" placeholder="How can we help you?"></textarea>
+                    <div class="error-message" id="messageError">Please enter your message (min. 10 characters).</div>
+                </div>
+
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MOBILE NAVBAR SCRIPT -->
+    <script>
+        const mobileToggle = document.getElementById("mobileToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        mobileToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("active");
+            mobileToggle.setAttribute("aria-expanded", isOpen);
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                mobileToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+    </script>
+
+    <!-- MODAL & VALIDATION SCRIPT -->
+    <script>
+        const modal = document.getElementById('enquiryModal');
+        const openBtn = document.getElementById('openModalBtn');
+        const closeBtn = document.getElementById('closeModalBtn');
+        const form = document.getElementById('enquiryForm');
+        const successMsg = document.getElementById('successMsg');
+
+        // Modal Open / Close Handler
+        openBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // Form Validation & Submission
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Name field elements
+            const nameInput = document.getElementById('fullName');
+            const nameError = document.getElementById('nameError');
+            // Regex: strictly allows letters and spaces only
+            const nameRegex = /^[A-Za-z\s]+$/;
+
+            if (!nameInput.value.trim() || !nameRegex.test(nameInput.value.trim())) {
+                nameError.style.display = 'block';
+                isValid = false;
+            } else {
+                nameError.style.display = 'none';
+            }
+
+            // Email field elements
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(emailInput.value.trim())) {
+                emailError.style.display = 'block';
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            // Message field elements
+            const messageInput = document.getElementById('message');
+            const messageError = document.getElementById('messageError');
+
+            if (messageInput.value.trim().length < 10) {
+                messageError.style.display = 'block';
+                isValid = false;
+            } else {
+                messageError.style.display = 'none';
+            }
+
+            // Successful validation action
+            if (isValid) {
+                successMsg.style.display = 'block';
+                form.reset();
+
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                    modal.classList.remove('active');
+                }, 2000);
+            }
+        });
+    </script>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-col footer-brand">
+                <a href="./index.html" class="footer-logo">
+                    ALBERTO <span>WATCHES</span>
+                </a>
+                <p>
+                    Timeless elegance meets modern innovation.
+                    Find the timepiece that reflects your style.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="./support.html">Contact Us</a></li>
+                    <li><a href="./support.html">Store Locator</a></li>
+                    <li><a href="./support.html">Email and Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Help and Resources</h4>
+                <ul>
+                    <li><a href="./support.html">FAQs</a></li>
+                    <li><a href="./products.html">Our Collections</a></li>
+                    <li><a href="./technology.html">Technology</a></li>
+                    <li><a href="./support.html">Customer Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://pk.linkedin.com">LinkedIn</a></li>
+                    <li><a href="https://x.com">X / Twitter</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p> 2026 <span>Alberto Watches</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
